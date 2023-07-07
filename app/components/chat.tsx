@@ -195,6 +195,12 @@ function useSubmitHandler() {
     return () => {
       window.removeEventListener("compositionstart", onCompositionStart);
       window.removeEventListener("compositionend", onCompositionEnd);
+      /*
+      这里的：移除事件监听器为什么使用onCompositionStart和onCompositionEnd，应该是bug吧！！！
+
+      window.removeEventListener("compositionstart", onCompositionStart);
+      window.removeEventListener("compositionend", onCompositionEnd);
+      */
     };
   }, []);
 
